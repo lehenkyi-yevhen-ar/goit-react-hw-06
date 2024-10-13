@@ -1,7 +1,14 @@
 import { nanoid } from "@reduxjs/toolkit"
 import { useDispatch } from "react-redux"
 import { addContact } from "../redux/contactsSlice"
-import { Field, Form, Formik } from "formik"
+import {
+  ErrorMessage,
+  Field,
+  Form,
+  Formik,
+} from "formik"
+import s from "./AddContact.module.css"
+import { validationSchema } from "../helpers/validationSchema"
 
 const AddContact = () => {
   const initialValues = { name: "", phone: "" }
@@ -22,19 +29,32 @@ const AddContact = () => {
       <Formik
         initialValues={initialValues}
         onSubmit={onSubmit}
+        validationSchema={validationSchema}
       >
-        <Form>
-          <Field
-            type="text"
-            name="name"
-            placeholder="Enter name"
-          />
-          <Field
-            type="text"
-            name="phone"
-            placeholder="Enter phone number"
-          />
-          <button type="submit">
+        <Form className={s.form}>
+          <div className={s.fields}>
+            <Field
+              type="text"
+              name="name"
+              placeholder="Enter name"
+            />
+            <ErrorMessage
+              name="name"
+              component="div"
+              style={{ color: "red" }}
+            />
+            <Field
+              type="text"
+              name="phone"
+              placeholder="Enter phone number"
+            />
+            <ErrorMessage
+              name="phone"
+              component="div"
+              style={{ color: "red" }}
+            />
+          </div>
+          <button type="submit" className={s.btn}>
             Add contact
           </button>
         </Form>

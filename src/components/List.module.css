@@ -1,0 +1,40 @@
+.list {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-top: 14px;
+  }
+  
+
+.card {
+    display: flex;
+    border: 1px solid black;
+    padding: 15px 15px;
+    border-radius: 5px;
+    min-width: 250px;
+  }
+  
+  .info {
+    display: flex;
+    flex-direction: column;
+    margin-right: 30px;
+    gap: 10px;
+  }
+  
+  .inInfo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .btn {
+    display: flex;
+    height: fit-content;
+    padding: 5px;
+    align-self: center;
+    margin-left: auto;
+    border-radius: 4px;
+    outline: none;
+    border: 1px solid gray;
+  }
+  
