@@ -1,7 +1,7 @@
 import { useDispatch } from "react-redux"
-import { changeFilter } from "../redux/filtersSlice"
+import { changeFilter } from "../../redux/filtersSlice"
 
-const FilterBar = () => {
+const SearchBox = () => {
   const dispatch = useDispatch()
 
   return (
@@ -17,4 +17,4 @@ const FilterBar = () => {
   )
 }
 
-export default FilterBar
+export default SearchBox

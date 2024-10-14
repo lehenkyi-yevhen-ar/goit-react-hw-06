@@ -1,16 +1,16 @@
 import { nanoid } from "@reduxjs/toolkit"
 import { useDispatch } from "react-redux"
-import { addContact } from "../redux/contactsSlice"
+import { addContact } from "../../redux/contactsSlice"
 import {
   ErrorMessage,
   Field,
   Form,
   Formik,
 } from "formik"
-import s from "./AddContact.module.css"
-import { validationSchema } from "../helpers/validationSchema"
+import s from "./ContactForm.module.css"
+import { validationSchema } from "../../helpers/validationSchema"
 
-const AddContact = () => {
+const ContactForm = () => {
   const initialValues = { name: "", phone: "" }
   const dispatch = useDispatch()
 
@@ -63,4 +63,4 @@ const AddContact = () => {
   )
 }
 
-export default AddContact
+export default ContactForm
